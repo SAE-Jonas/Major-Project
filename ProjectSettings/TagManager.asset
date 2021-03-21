@@ -17,8 +17,8 @@ TagManager:
   - Ground
   - Player
   - Obstacle
-  - 
-  - 
+  - whatIsGround
+  - whatIsPlayer
   - 
   - 
   - 
