@@ -11,6 +11,7 @@ public class Ghost_Movement : MonoBehaviour
     private Vector3 moveInput;
     private Vector3 moveVelocity;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class Ghost_Movement : MonoBehaviour
         moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
 
         moveVelocity = moveInput * moveSpeed;
+
 
         if (!GamepadConnected)
         {
