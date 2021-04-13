@@ -13,6 +13,9 @@ public class Player_Movement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public bool Witch;
+    public WitchStaff Staff;
+
     Vector3 velocity;
     bool isGrounded;
 
@@ -42,5 +45,18 @@ public class Player_Movement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if(Witch)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Staff.isFiring = true;
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                Staff.isFiring = false;
+            }
+        }
     }
 }
