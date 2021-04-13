@@ -6,6 +6,10 @@ public class LaserProjectile : MonoBehaviour
 {
     public float speed;
 
+    public float lifeTime;
+
+    public int damageToGive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +20,19 @@ public class LaserProjectile : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+        lifeTime = Time.deltaTime;
+        if (lifeTime <=0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ghost")
+        {
+            other.gameObject.GetComponent<GhostHealth>().HurtGhost(damageToGive);
+        }
     }
 }
