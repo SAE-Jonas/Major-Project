@@ -10,6 +10,8 @@ public class LaserProjectile : MonoBehaviour
 
     public int damageToGive;
 
+    public bool gem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,11 @@ public class LaserProjectile : MonoBehaviour
         if (other.gameObject.tag == "Ghost")
         {
             other.gameObject.GetComponent<GhostHealth>().HurtGhost(damageToGive);
+
+            if(!gem)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
