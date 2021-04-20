@@ -18,7 +18,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision player)
     {
-        if (player.gameObject.tag == "Player")
+        if (player.gameObject.tag == "Ghost")
         {
             player.gameObject.GetComponent<PlayerHealth>().DamageRecieved(BulletDamage);
             Destroy(gameObject);
