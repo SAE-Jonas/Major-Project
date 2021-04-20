@@ -14,7 +14,10 @@ public class Player_Movement : MonoBehaviour
     public LayerMask groundMask;
 
     public bool Witch;
+    public bool Ghost;
     public WitchStaff Staff;
+
+    public int RunesCollected;
 
     Vector3 velocity;
     bool isGrounded;
@@ -46,16 +49,24 @@ public class Player_Movement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if(Witch)
+        if (RunesCollected == 2)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Witch)
             {
-                Staff.isFiring = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Staff.isFiring = true;
+                }
+
+                if (Input.GetMouseButtonUp(0))
+                {
+                    Staff.isFiring = false;
+                }
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (Ghost)
             {
-                Staff.isFiring = false;
+                speed = speed + 2;
             }
         }
     }

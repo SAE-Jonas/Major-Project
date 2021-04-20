@@ -5,6 +5,8 @@ using UnityEngine;
 public class CollectRune : MonoBehaviour
 {
     public static int objects = 0;
+    public Player_Movement Witch;
+    public Player_Movement Ghost;
 
     void Awake()
     {
@@ -17,12 +19,14 @@ public class CollectRune : MonoBehaviour
         {
             objects--;
             gameObject.SetActive(false);
+            Witch.RunesCollected += 1;
         }
 
         if (player.gameObject.tag == "Ghost")
         {
             objects--;
             gameObject.SetActive(false);
+            Ghost.RunesCollected += 1;
         }
     }
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Waypoint
   - Ghost
+  - Witch
+  - Rune
   layers:
   - Default
   - TransparentFX
