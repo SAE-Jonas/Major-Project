@@ -6,10 +6,14 @@ public class PlayerHealth : MonoBehaviour
     public int PlayerStartHealth;
     public int PlayerGameHealth;
 
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         PlayerGameHealth = PlayerStartHealth;
+
+        healthBar.SetMaxHealth(PlayerStartHealth);
     }
 
     // Update is called once per frame
@@ -24,5 +28,7 @@ public class PlayerHealth : MonoBehaviour
     public void DamageRecieved(int HealthReduced)
     {
         PlayerGameHealth -= HealthReduced;
+
+        healthBar.SetHealth(PlayerGameHealth);
     }
 }

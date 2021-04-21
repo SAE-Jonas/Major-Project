@@ -9,6 +9,10 @@ public class Witch_Movement : MonoBehaviour
     public Rigidbody GhostRigidbody;
     public CharacterController controller;
 
+    public WitchStaff Staff;
+
+    public int RunesCollected;
+
     private Vector3 moveInput;
     private Vector3 moveVelocity;
 
@@ -43,6 +47,29 @@ public class Witch_Movement : MonoBehaviour
             {
                 transform.rotation = Quaternion.LookRotation(Direction, Vector3.up);
             }
+        }
+
+        if (RunesCollected == 2)
+        {
+            if (Input.GetButtonDown("Shoot"))
+            {
+                Staff.isFiring = true;
+            }
+
+            if (Input.GetButtonUp("Shoot"))
+            {
+                Staff.isFiring = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.JoystickButton14))
+            //{
+            //    Staff.isFiring = true;
+            //}
+
+            //if (Input.GetKeyUp(KeyCode.JoystickButton14))
+            //{
+            //    Staff.isFiring = false;
+            //}
         }
     }
 
