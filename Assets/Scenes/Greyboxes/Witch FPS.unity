@@ -1114,7 +1114,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88655962}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &88655967
 Camera:
   m_ObjectHideFlags: 0
@@ -10243,6 +10243,7 @@ MonoBehaviour:
   Ghost: 0
   Staff: {fileID: 389270320}
   RunesCollected: 0
+  timeRemaining: 10
 --- !u!143 &1034974505
 CharacterController:
   m_ObjectHideFlags: 0
@@ -18131,6 +18132,7 @@ MonoBehaviour:
   Ghost: 1
   Staff: {fileID: 1270164057}
   RunesCollected: 0
+  timeRemaining: 10
 --- !u!143 &1967432407
 CharacterController:
   m_ObjectHideFlags: 0
