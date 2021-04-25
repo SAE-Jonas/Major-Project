@@ -18,6 +18,7 @@ public class Player_Movement : MonoBehaviour
     public WitchStaff Staff;
 
     public int RunesCollected;
+    public bool LaserProjectile;
 
     public float timeRemaining = 10;
 
@@ -51,28 +52,40 @@ public class Player_Movement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if (RunesCollected == 2)
+        if (RunesCollected >= 2)
         {
             if (Witch)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.X))
                 {
-                    Staff.isFiring = true;
+
+                    LaserProjectile = true;
+
                 }
 
-                if (Input.GetMouseButtonUp(0))
+                if (LaserProjectile)
                 {
-                    Staff.isFiring = false;
-                }
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Staff.isFiring = true;
+                    }
 
-                if(timeRemaining > 0)
-                {
-                    timeRemaining -= Time.deltaTime;
-                }
-                else
-                {
-                    Debug.Log("Time has run out");
-                    RunesCollected = 0;
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        Staff.isFiring = false;
+                    }
+
+                    if (timeRemaining > 0)
+                    {
+                        timeRemaining -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        Debug.Log("Time has run out");
+                        RunesCollected = RunesCollected - 2;
+                        LaserProjectile = false;
+                        timeRemaining = 10;
+                    }
                 }
             }
 
