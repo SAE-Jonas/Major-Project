@@ -6,7 +6,7 @@ public class Witch_Movement : MonoBehaviour
 {
     public float moveSpeed;
     public bool GamepadConnected;
-    public Rigidbody GhostRigidbody;
+    public Rigidbody WitchRigidbody;
     public CharacterController controller;
 
     public WitchStaff Staff;
@@ -20,7 +20,7 @@ public class Witch_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GhostRigidbody = GetComponent<Rigidbody>();
+        WitchRigidbody = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
     }
 
