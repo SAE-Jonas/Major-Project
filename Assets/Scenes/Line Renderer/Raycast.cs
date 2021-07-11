@@ -21,5 +21,12 @@ public class Raycast : MonoBehaviour
             this.line.SetPosition(0, this.transform.position);
             this.line.SetPosition(1, point);
       }
+
+    else
+      {
+            this.line.SetPosition(0, this.transform.position);
+            this.line.SetPosition(1, this.transform.position + this.transform.forward * 25);
+
+      }
     }
 }

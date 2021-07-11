@@ -23,8 +23,8 @@ TagManager:
   - whatIsGround
   - whatIsPlayer
   - Cover
-  - 
-  - 
+  - NotSolid
+  - Solid
   - 
   - 
   - 
